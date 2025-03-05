@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- بخش هدر شامل متاتگ ها، عنوان و منابع خارجی -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,50 @@
     <title>My Daily</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        @media print {
+            .container {
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+                background-color: white;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .profile_profileImg img {
+                width: 100%;
+                height: auto;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+        
+        /* Force background colors to show in PDF */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+    </style>
 </head>
 <body>
+    <!-- محتوای اصلی -->
     <div class="container">
-        <!-- پروفایل -->
+        <!-- بخش پروفایل -->
         <div class="profile">
             <div class="profile_container">
                 <div class="profile_profileImg">
@@ -25,136 +66,154 @@
                     <p class="description">
                         "I am a creative and committed programmer, always seeking innovative solutions to complex challenges. With a passion for learning new technologies, I continuously work on enhancing my skills to achieve the best results in various projects. Commitment to quality and continuous improvement has always guided me in my professional journey."
                     </p>
-                    <a class="downloadBtn" href="./cv.pdf" download="ariyan.hosseini.pdf">Download pdf</a>
+                    <a class="downloadBtn" href="#">Download pdf</a>
                 </div>
             </div>
         </div>
 
-        <!-- Left Column: Skills and Certification -->
+        <!-- ستون سمت چپ شامل مهارت‌ها و گواهینامه‌ها -->
         <div class="left-column">
+            <!-- بخش مهارت‌ها -->
             <div class="skills">
-                <h3 class="title">Experties</h3>
+                <h3 class="title">Expertise</h3>
                 <ul class="skill_list description">
-                    <li>python</li>
-                    <li>Web Development Front-end</li>
-                    <li>solidity</li>
-                    <li>instagram-markting</li>
-                    <li>Blockchain Developer</li>
-                    <li>Smart Contracts، DeFi، Web3</li>
-                    <li>network principles</li>
+                    <li>Python</li>
+                    <li>Front-end Web Development</li>
+                    <li>Solidity</li>
+                    <li>Instagram Marketing</li>
+                    <li>Blockchain Development</li>
+                    <li>Smart Contracts, DeFi, Web3</li>
+                    <li>Network Principles</li>
                 </ul>
             </div>
+            <!-- بخش گواهینامه‌ها -->
             <div class="certification">
-                <h3 class="title">Certification</h3>
+                <h3 class="title">Certifications</h3>
+                <!-- موارد گواهینامه‌ها -->
                 <div class="certification_item">
                     <p class="item_preTitle">2024</p>
-                    <h4>python Programming for beginners</h4>
-                    <p class="description">This certification demonstrates proficiency in the fundamental concepts of Python programming. Skills learned include working with variables, operators, and control structures such as conditionals and loops. The course also covers basic object-oriented programming principles, as well as using core libraries like math and datetime for performing common tasks in Python.</p>
+                    <h4>Python Programming for Beginners</h4>
+                    <p class="description">This certification demonstrates proficiency in fundamental Python programming concepts including variables, operators, control structures, and basic object-oriented programming principles.</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2024</p>
                     <h4>Advanced Python</h4>
-                    <p class="description">This certification demonstrates advanced skills in Python programming, including deep understanding of object-oriented programming (OOP), decorators, generators, and advanced data structures such as sets, dictionaries, and tuples. The course also covers multi-threading, file handling, and web development frameworks like Flask and Django. It equips learners with the ability to solve complex programming challenges and build sophisticated applications using Python.</p>
+                    <p class="description">Advanced Python programming certification covering OOP, decorators, generators, data structures, multi-threading, and web frameworks like Flask and Django.</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2024</p>
-                    <h4>network principles</h4>
-                    <p class="description">This certification validates the understanding of fundamental networking principles, including the OSI model, IP addressing, subnetting, routing protocols, and network security. The course covers essential topics such as TCP/IP, DNS, DHCP, VPNs, and the configuration of various network devices like routers and switches. It prepares learners to design and troubleshoot networks effectively while ensuring secure data transmission and optimal network performance.</p>
+                    <h4>Network Principles</h4>
+                    <p class="description">Comprehensive understanding of networking fundamentals including OSI model, IP addressing, routing protocols, and network security.</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2024</p>
-                    <h4>Web_Development Front-end</h4>
-                    <p class="description">This certification demonstrates proficiency in front-end web development, focusing on building user-friendly, responsive, and interactive websites. Skills learned include HTML, CSS, and JavaScript for creating well-structured, styled, and dynamic web pages. The course also covers frameworks and libraries like React, Angular, or Vue.js, as well as version control using Git. It equips learners with the skills to design visually appealing and functional user interfaces while optimizing the user experience.</p>
+                    <h4>Front-end Web Development</h4>
+                    <p class="description">Mastery in HTML, CSS, JavaScript and modern frameworks for creating responsive and interactive web applications.</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2024</p>
-                    <h4>instagram-markting</h4>
-                    <p class="description">This certification demonstrates expertise in Instagram marketing strategies and tools. It covers content creation, audience engagement, and leveraging Instagram features such as Stories, Reels, and IGTV. Learners gain skills in using analytics to optimize campaigns, grow followers organically, and run paid ads effectively. The course also includes strategies for brand building, influencer collaborations, and driving traffic to websites or online stores through Instagram.</p>
+                    <h4>Instagram Marketing</h4>
+                    <p class="description">Strategic expertise in Instagram marketing, content creation, analytics, and campaign optimization.</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2024</p>
-                    <h4>Introduction to Blockchain & Bitcoin</h4>
-                    <p class="description">This certification provides a comprehensive understanding of the foundational concepts of blockchain technology and Bitcoin. It covers how blockchain works, its decentralized nature, and its application in various industries. The course also explores the fundamentals of Bitcoin, including its creation, mining process, and how transactions are securely verified using cryptographic techniques. Learners gain insights into the potential of blockchain to disrupt traditional systems and the future of digital currencies.</p>
+                    <h4>Blockchain & Bitcoin Fundamentals</h4>
+                    <p class="description">Understanding of blockchain technology, Bitcoin mechanics, and cryptocurrency fundamentals.</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2025</p>
-                    <h4>Bitcoin, Blockchain, and Cryptocurrencies</h4>
-                    <p class="description">This certification demonstrates an in-depth understanding of Bitcoin, blockchain technology, and the broader cryptocurrency ecosystem. The course covers the mechanics of Bitcoin, how blockchain enables secure, decentralized transactions, and the role of cryptographic algorithms in securing digital assets. Additionally, learners explore various cryptocurrencies, including Ethereum, and learn about wallet management, exchanges, and the concept of decentralized finance (DeFi). The course also provides insights into the future of cryptocurrencies and their potential impact on global finance.</p>
+                    <h4>Advanced Blockchain & Cryptocurrencies</h4>
+                    <p class="description">In-depth knowledge of blockchain systems, various cryptocurrencies, and decentralized finance (DeFi).</p>
                 </div>
                 <div class="certification_item">
                     <p class="item_preTitle">2025</p>
-                    <h4>solidity</h4>
-                    <p class="description">This certification validates expertise in Solidity, the programming language used to write smart contracts on the Ethereum blockchain. The course covers the fundamental concepts of Solidity, including data types, control structures, and functions, as well as how to create, deploy, and interact with decentralized applications (dApps). Learners also gain hands-on experience with security best practices, gas optimization, and testing techniques to ensure the reliability and efficiency of smart contracts. This certification prepares individuals to develop secure and scalable blockchain applications using Solidity.</p>
+                    <h4>Solidity Development</h4>
+                    <p class="description">Expert-level Solidity programming for Ethereum smart contracts and dApp development.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Right Column: Education, Experience, and Interest -->
+        <!-- ستون سمت راست شامل تحصیلات، تجربیات و علایق -->
         <div class="right-column">
+            <!-- بخش تحصیلات -->
             <div class="edu">
                 <h3 class="title">Education</h3>
                 <div class="edu_item">
                     <p class="item_preTitle">2022-2024</p>
-                    <h4 class="item_title">Content production</h4>
-                    <p class="item_subtitle">forsat shirazi</p>
+                    <h4 class="item_title">Content Production</h4>
+                    <p class="item_subtitle">Forsat Shirazy</p>
                 </div>
                 <div class="edu_item">
                     <p class="item_preTitle">2024</p>
-                    <h4 class="item_title">software</h4>
-                    <p class="item_subtitle">apadana</p>
+                    <h4 class="item_title">Software Development</h4>
+                    <p class="item_subtitle">Apadana</p>
                 </div>
             </div>
+            <!-- بخش تجربیات -->
             <div class="exp">
                 <h3 class="title">Experience</h3>
                 <div class="exp_item">
                     <p class="item_preTitle">2021-2023</p>
-                    <h3>patomat Club</h3>
-                    <p class="description">Organized and maintained digital media databases for movies and TV shows. Ensured data accuracy and optimized file management systems. Performed computer and laptop repairs, including hardware troubleshooting and system maintenance. Provided software support, including OS installations, updates, and optimization. Assisted in IT-related tasks, ensuring smooth operation of systems and data workflows.</p>
+                    <h3>Patomat Club</h3>
+                    <p class="description">Digital media management, computer repairs, and IT support.</p>
                 </div>
                 <div class="exp_item">
                     <p class="item_preTitle">2023-2024</p>
-                    <h3>tax online</h3>
-                    <p class="description">Handled tax-related tasks, including tax filings, calculations, and documentation for individuals and businesses. Ensured compliance with local tax laws and regulations. Assisted clients in understanding their tax obligations and provided guidance on minimizing liabilities. Managed financial records and prepared tax returns for various entities. Stayed updated with changes in tax policies and advised clients accordingly.</p>
+                    <h3>Tax Online</h3>
+                    <p class="description">Tax filing, calculations, and financial documentation management.</p>
                 </div>
                 <div class="exp_item">
                     <p class="item_preTitle">2025</p>
-                    <h3>arda tecnologhy</h3>
-                    <p class="description">Assisted in the development of responsive websites using HTML, CSS, and JavaScript. Contributed to the design and optimization of web pages to improve user experience. Worked with front-end frameworks like React or Vue.js to build dynamic web applications. Collaborated with the team to integrate back-end services and APIs. Gained hands-on experience in version control using Git and GitHub.</p>
+                    <h3>Arda Technology</h3>
+                    <p class="description">Web development using modern frameworks and technologies.</p>
                 </div>
             </div>
-            <div class="interset">
-                <h3 class="title">interset</h3>
-                <div class="interst_item">
-                    <i data-feather="music"></i>
-                    <span>music</span>
-                    <div class="interst_item">
+            <!-- بخش علایق -->
+            <div class="interests">
+                <h3 class="title">Interests</h3>
+                <div class="interest_item" style="display: flex; gap: 30px;">
+                    <div class="interest_item">
+                        <i data-feather="music"></i>
+                        <span>Music</span>
+                    </div>
+                    <div class="interest_item">
                         <i data-feather="book"></i>
-                        <span>books</span>
-                        <div class="interst_item">
-                            <i data-feather="map"></i>
-                            <span>travel</span>
-                            <div class="interst_item">
-                                <i data-feather="film"></i>
-                                <span>movie</span>
-                            </div>
-                        </div>
+                        <span>Books</span>
+                    </div>
+                    <div class="interest_item">
+                        <i data-feather="map"></i>
+                        <span>Travel</span>
+                    </div>
+                    <div class="interest_item">
+                        <i data-feather="film"></i>
+                        <span>Movies</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="CONTACT">
+    
+    <!-- فوتر شامل اطلاعات تماس و شبکه‌های اجتماعی -->
+    <footer class="footer">
+        <!-- اطلاعات تماس -->
+        <div class="contact">
             <h3 class="title">Contact</h3>
-            <div class="CONTACT_info">
-                <div>
+            <div class="contact_info">
+                <div class="contact_item">
                     <p class="item_preTitle">Phone</p>
                     <p class="description">
                         <i data-feather="phone"></i>
                         <span>+989210248214</span>
                     </p>
                 </div>
-                <div>
+                <div class="contact_item">
+                    <p class="item_preTitle">Location</p>
+                    <p class="description">
+                        <i data-feather="map"></i>
+                        <span>Iran, Shiraz</span>
+                    </p>
+                </div>
+                <div class="contact_item">
                     <p class="item_preTitle">Email</p>
                     <p class="description">
                         <i data-feather="mail"></i>
@@ -163,26 +222,93 @@
                 </div>
             </div>
         </div>
-        <div class="social_item">
+        <!-- لینک‌های شبکه‌های اجتماعی -->
+        <div class="social">
             <h3 class="title">Social</h3>
             <div class="social_links">
-                <i data-feather="instagram"></i>
+                <a href="https://instagram.com/ariyan_ho" class="social_link">
+                    <i data-feather="instagram"></i>
                     <span>@ariyan_ho</span>
-                </div>
-                <div class="social_links">
+                </a>
+                <a href="https://linkedin.com/in/ariyan-hosseini" class="social_link">
                     <i data-feather="linkedin"></i>
                     <span>ariyan-hosseini</span>
-                </div>
-                <div class="social_links">
+                </a>
+                <a href="https://github.com/ariyanhosseini2005" class="social_link">
                     <i data-feather="github"></i>
                     <span>ariyanhosseini2005</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
-    </div>
+    </footer>
+
+    <!-- اسکریپت برای راه‌اندازی آیکون‌های Feather -->
     <script>
         feather.replace();
+        
+        $(document).ready(function() {
+            $('.downloadBtn').click(async function(e) {
+                e.preventDefault();
+                
+                try {
+                    // Replace Feather icons with SVG elements
+                    await feather.replace();
+                    
+                    // Wait for all images to load
+                    await Promise.all(Array.from(document.images).map(img => {
+                        if (img.complete) return Promise.resolve();
+                        return new Promise((resolve, reject) => {
+                            img.onload = resolve;
+                            img.onerror = reject;
+                        });
+                    }));
+
+                    // Get the container element
+                    const element = document.querySelector('.container');
+                    
+                    // Configure PDF options with improved settings
+                    const opt = {
+                        margin: [10, 10, 10, 10],
+                        filename: 'ariyan_hosseini_cv.pdf',
+                        image: { type: 'jpeg', quality: 1 },
+                        html2canvas: { 
+                            scale: 2,
+                            useCORS: true,
+                            allowTaint: true,
+                            logging: true,
+                            letterRendering: true,
+                            foreignObjectRendering: true,
+                            removeContainer: true,
+                            backgroundColor: '#ffffff'
+                        },
+                        jsPDF: { 
+                            unit: 'mm',
+                            format: 'a4',
+                            orientation: 'portrait',
+                            compress: true,
+                            precision: 16
+                        }
+                    };
+
+                    // Generate PDF with improved error handling
+                    const pdf = html2pdf().set(opt);
+                    
+                    // Add event listeners for better debugging
+                    pdf.from(element)
+                       .toPdf()
+                       .get('pdf')
+                       .then((pdfObject) => {
+                           console.log('PDF generated successfully');
+                       })
+                       .save();
+                    
+                } catch (error) {
+                    console.error('PDF Generation Error:', error);
+                    alert('خطا در ایجاد PDF. لطفاً دوباره تلاش کنید.');
+                }
+            });
+        });
     </script>
+    
 </body>
 </html>

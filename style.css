@@ -1,9 +1,14 @@
+/* فونت‌های مورد استفاده در سایت */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vazirmatn:wght@100..900&display=swap');
+
+/* ریست کردن استایل‌های پیش‌فرض */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+/* متغیرهای رنگ و استایل */
 :root {
     --primary-color: #ff7613;
     --primary-light: #ff8c3f;
@@ -12,9 +17,13 @@
     --container-bg: #111111;
     --card-bg: #1a1a1a;
 }
+
+/* تنظیمات پایه HTML */
 html {
     font-size: 10px;
 }
+
+/* استایل‌های اصلی بدنه */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
@@ -22,24 +31,29 @@ body {
     line-height: 1.6;
     min-width: 320px;
 }
-/*common style*/
+
+/* استایل‌های مشترک */
 img {
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
 }
+
 img:hover {
     transform: scale(1.02);
 }
+
 a {
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
 }
+
 a:hover {
     color: var(--primary-color);
 }
+
 .description {
     margin-top: 1.5rem;
     font-size: 1.5rem;
@@ -47,7 +61,8 @@ a:hover {
     color: var(--text-color);
     line-height: 1.8;
 }
-/* Common Title Styles */
+
+/* استایل‌های عنوان مشترک */
 .title {
     color: var(--primary-color);
     font-weight: 700;
@@ -60,6 +75,7 @@ a:hover {
     display: block;
     text-align: left;
 }
+
 .title::after {
     content: '';
     position: absolute;
@@ -70,11 +86,12 @@ a:hover {
     background: var(--primary-color);
     transition: width 0.3s ease;
 }
+
 .title:hover::after {
     width: 100px;
 }
 
-/* Left Column Titles */
+/* استایل‌های عنوان ستون سمت چپ */
 .skills .title,
 .certification .title,
 .CONTACT .title,
@@ -84,7 +101,7 @@ a:hover {
     padding-left: 0;
 }
 
-/* Right Column Titles */
+/* استایل‌های عنوان ستون سمت راست */
 .edu .title,
 .exp .title,
 .interset .title {
@@ -99,7 +116,7 @@ a:hover {
     left: 0;
 }
 
-/* Update right column content alignment */
+/* تنظیم چینش محتوای ستون راست */
 .edu .item_preTitle,
 .exp .item_preTitle,
 .interset .item_preTitle {
@@ -128,13 +145,14 @@ a:hover {
     justify-content: flex-start;
 }
 
+/* استایل‌های رسپانسیو */
 @media only screen and (max-width: 768px) {
     .title {
         font-size: 2.2rem;
         margin-bottom: 2rem;
     }
     
-    /* Keep alignment in mobile view */
+    /* حفظ چینش در نمای موبایل */
     .skills .title,
     .certification .title,
     .social_item .title {
@@ -155,7 +173,7 @@ a:hover {
     }
 }
 
-/* Main Layout */
+/* چیدمان اصلی */
 .container {
     max-width: 1200px;
     width: 90%;
@@ -169,7 +187,7 @@ a:hover {
     gap: 5rem;
 }
 
-/* Profile Section */
+/* بخش پروفایل */
 .profile {
     grid-column: 1 / -1;
     margin-bottom: 4rem;
@@ -178,23 +196,28 @@ a:hover {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
+
 .profile_container {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 5rem;
     align-items: center;
 }
+
 .profile_profileImg {
     width: 100%;
     max-width: 300px;
 }
+
 .profile_profileImg img {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(255, 118, 19, 0.2);
 }
+
 .profile_name {
     margin-bottom: 1rem;
 }
+
 .profile_name_firstName {
     color: white;
     font-weight: 700;
@@ -205,6 +228,7 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     text-align: left;
 }
+
 .profile_name_lastName {
     color: var(--primary-color);
     font-weight: 300;
@@ -216,6 +240,7 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     text-align: left;
 }
+
 .profile_title {
     font-size: 2rem;
     font-weight: 500;
@@ -224,12 +249,15 @@ a:hover {
     color: var(--text-color);
     text-align: left;
 }
+
 .profile .description {
     font-size: 1.6rem;
     margin-bottom: 2rem;
     max-width: 800px;
     text-align: left;
 }
+
+/* دکمه دانلود */
 .downloadBtn {
     display: inline-block;
     padding: 1.2rem 3rem;
@@ -243,6 +271,7 @@ a:hover {
     border: 2px solid transparent;
     float: left;
 }
+
 .downloadBtn:hover {
     background: transparent;
     border-color: var(--primary-color);
@@ -251,21 +280,21 @@ a:hover {
     box-shadow: 0 5px 15px rgba(255, 118, 19, 0.3);
 }
 
-/* Left Column */
+/* ستون سمت چپ */
 .left-column {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
 
-/* Right Column */
+/* ستون سمت راست */
 .right-column {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
 
-/* Section Cards */
+/* کارت‌های بخش‌ها */
 .skills,
 .certification,
 .edu,
@@ -278,6 +307,7 @@ a:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
+/* استایل‌های عنوان آیتم‌ها */
 .item_preTitle {
     font-size: 1.4rem;
     color: var(--primary-color);
@@ -287,6 +317,7 @@ a:hover {
     background: rgba(255, 118, 19, 0.1);
     border-radius: 4px;
 }
+
 .item_title {
     font-size: 1.8rem;
     color: white;
@@ -294,20 +325,23 @@ a:hover {
     margin: 1rem 0;
     transition: color 0.3s ease;
 }
+
 .item_title:hover {
     color: var(--primary-color);
 }
+
 .item_subtitle {
     font-size: 1.4rem;
     color: var(--text-color);
     font-weight: 400;
 }
 
-/* Skills */
+/* بخش مهارت‌ها */
 .skill_list {
     list-style: none;
     margin-top: 1rem;
 }
+
 .skill_list li {
     font-size: 1.5rem;
     color: var(--text-color);
@@ -316,10 +350,12 @@ a:hover {
     padding-left: 2.5rem;
     transition: all 0.3s ease;
 }
+
 .skill_list li:hover {
     color: white;
     transform: translateX(5px);
 }
+
 .skill_list li::before {
     content: "•";
     color: var(--primary-color);
@@ -328,7 +364,7 @@ a:hover {
     font-size: 2.2rem;
 }
 
-/* Certification & Experience */
+/* بخش گواهینامه‌ها و تجربیات */
 .certification_item,
 .exp_item {
     margin-top: 3rem;
@@ -337,23 +373,36 @@ a:hover {
     border-radius: 12px;
     transition: all 0.3s ease;
 }
+
 .certification_item:hover,
 .exp_item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Education & Experience Container */
+/* کانتینر تحصیلات و تجربیات */
 .edu-cert-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
 }
 
-/* Interest Section */
-.interset {
-    margin-top: 0;
+/* بخش علایق */
+.interests {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 12px;
 }
+
+.interset .title {
+    text-align: left;
+}
+
+.interset .title::after {
+    left: 0;
+    right: auto;
+}
+
 .interst_item {
     display: flex;
     align-items: center;
@@ -363,7 +412,10 @@ a:hover {
     margin-top: 2rem;
     transition: all 0.3s ease;
     padding-left: 1rem;
+    border: var(--card-bg);
+    border-radius: 8px;
 }
+
 .interst_item i {
     color: var(--primary-color);
     font-size: 2.2rem;
@@ -372,23 +424,29 @@ a:hover {
     display: flex;
     justify-content: center;
 }
+
 .interst_item span {
     display: inline-block;
 }
+
 .interst_item:hover {
     color: white;
     transform: translateX(5px);
+    border-color: white;
 }
+
 .interst_item:hover i {
     transform: scale(1.2);
 }
-/* Fix nested interest items */
+
+/* تنظیم آیتم‌های تو در تو علایق */
 .interst_item .interst_item {
     margin-top: 0;
     margin-left: 2rem;
     padding-left: 0;
 }
 
+/* استایل‌های رسپانسیو */
 @media only screen and (max-width: 768px) {
     .container {
         width: 95%;
@@ -396,38 +454,47 @@ a:hover {
         padding: 2rem;
         gap: 3rem;
     }
+    
     .left-column,
     .right-column {
         gap: 3rem;
     }
+    
     .title::after {
         left: 50%;
         transform: translateX(-50%);
     }
+    
     .skill_list li:hover {
         transform: translateX(0);
     }
+    
     .certification_item:hover,
     .exp_item:hover {
         transform: translateY(0);
     }
+    
     .profile {
         padding: 2rem;
     }
+    
     .profile_container {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+    
     .profile_profileImg {
         max-width: 250px;
         margin: 0 auto;
     }
+    
     .profile_name_firstName,
     .profile_name_lastName,
     .profile_title,
     .profile .description {
         text-align: center;
     }
+    
     .downloadBtn {
         float: none;
         display: block;
@@ -435,9 +502,7 @@ a:hover {
         max-width: 200px;
     }
 }
-/* ... existing code ... */
-
-/* Footer/Contact Section */
+/* بخش فوتر و تماس */
 .footer {
     grid-column: 1 / -1;
     margin-top: 4rem;
@@ -450,6 +515,7 @@ a:hover {
     gap: 5rem;
 }
 
+/* افکت حاشیه متحرک */
 .footer::before {
     content: '';
     position: absolute;
@@ -470,17 +536,22 @@ a:hover {
     100% { transform: translateX(100%); }
 }
 
-/* Contact & Social Common Styles */
+/* استایل‌های مشترک تماس و شبکه‌های اجتماعی */
+.contact {
+    padding: 10px;
+}
 .CONTACT,
 .social_item {
     padding: 2.5rem;
+    margin-top: 5px;
 }
 
-/* Contact Info Styles */
+/* استایل‌های اطلاعات تماس */
 .CONTACT_info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-left: 1.5rem;
 }
 
 .CONTACT_info .description,
@@ -489,9 +560,10 @@ a:hover {
     align-items: center;
     gap: 1.5rem;
     margin-top: 0.5rem;
+    margin-left: 4rem;
 }
 
-/* Icon Styles */
+/* استایل‌های آیکون‌ها */
 .CONTACT_info i,
 .social_links i {
     color: var(--primary-color);
@@ -503,7 +575,7 @@ a:hover {
     font-size: 2.2rem;
 }
 
-/* Text Styles */
+/* استایل‌های متن */
 .CONTACT_info span,
 .social_links span {
     font-size: 1.6rem;
@@ -511,7 +583,7 @@ a:hover {
     text-align: left;
 }
 
-/* Hover Effects */
+/* افکت‌های هاور */
 .social_links:hover i {
     transform: scale(1.2);
 }
@@ -520,7 +592,7 @@ a:hover {
     color: white;
 }
 
-/* Mobile Responsive */
+/* رسپانسیو موبایل */
 @media only screen and (max-width: 768px) {
     .container {
         width: 95%;
