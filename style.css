@@ -92,7 +92,6 @@ a:hover {
 .title:hover::after {
     width: 100px;
 }
-
 /* استایل‌های عنوان ستون سمت چپ */
 .skills .title,
 .certification .title,
@@ -102,7 +101,6 @@ a:hover {
     margin-bottom: 3rem;
     padding-left: 0;
 }
-
 /* استایل‌های عنوان ستون سمت راست */
 .edu .title,
 .exp .title,
@@ -110,7 +108,6 @@ a:hover {
     text-align: left;
     margin-bottom: 3rem;
 }
-
 .edu .title::after,
 .exp .title::after,
 .interset .title::after {
